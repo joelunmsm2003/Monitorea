@@ -6,7 +6,9 @@ import datetime
 
 def home(request):
 
-   return render_to_response('home.html', {},
+  empresa = Empresa.objects.all()
+
+  return render_to_response('home.html', {'empresa':empresa},
                               context_instance=RequestContext(request))
 
 
