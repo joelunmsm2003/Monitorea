@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/theme/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Monitoreo</title>
+
+
+    {% load static %} 
+
+    <link href="{{STATIC_URL}}bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap.js" rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body role="document" data-feedly-mini="yes">
+
+    <div class="container theme-showcase" role="main">
+
+      {% include "header.html" %}
+
+      <div class="jumbotron">
+        <h1><a href='/empresa/'>{{empresa.name}}</a></h1>
+        <p>Equipos</p>
+      </div>
+
+
+ 
+
+
+   <table class='table'>
+
+   <tr class='active'><td>Equipo</td>
+   
+
+   <td>User</td>
+   <td>Pass</td>
+   <td>Descripcion</td>
+   <td>Ubicacion</td>
+   <td>Acciones</td>
+
+     <form method="post" action="/equipo/{{empresa.id}}">
+
+        {% csrf_token %}
+        <tr>
+        <td><input name="name" class="form-control"></td>
+
+        <td><input name="user" class="form-control"></td>
+
+        <td><input name="pass" class="form-control"></td>
+        <td><input name="descripcion" class="form-control"></td>
+        <td><input name="ubicacion" class="form-control"></td>
+        <td><input type="submit"  value="Add" class="btn btn-primary"></td>
+
+        
+        </tr>
+      </form>
+ 
+   {% if equipo %}
+
+   {% for equipo in equipo %}
+   <tr>
+
+   <td>{{ equipo.name }}</td>
+
+   <td>{{ equipo.user}}</td>
+   <td>{{ equipo.password}}</td>
+   <td>{{ equipo.descripcion}}</td>
+   <td>{{ equipo.ubicacion}}</td>
+   <td><a class="btn btn-primary" href="/parametro/{{equipo.id}}/{{empresa.id}}" role="button">Parametros</a></td>
+
+   </tr>
+   {% endfor %}
+
+   {% endif %}
+
+    
+
+
+   </table>
+
+    
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Theme Template for Bootstrap_files/jquery.min.js"></script>
+    <script src="./Theme Template for Bootstrap_files/bootstrap.min.js"></script>
+    <script src="./Theme Template for Bootstrap_files/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Theme Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>

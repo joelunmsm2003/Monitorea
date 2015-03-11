@@ -4,6 +4,9 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.blogapp.views.index'),
     url(r'^update/', 'blog.blogapp.views.update'),
     url(r'^delete/', 'blog.blogapp.views.delete'),
-    url(r'^home/', 'blog.blogapp.views.home'),
+    url(r'^empresa/', 'blog.blogapp.views.empresa'),
+    url(r'^equipo/(\w+)', 'blog.blogapp.views.equipo'),
+    url(r'^parametro/(\w+)/(\w+)', 'blog.blogapp.views.parametro'),
+    
 
 )
