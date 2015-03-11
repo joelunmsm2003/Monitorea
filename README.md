@@ -1,15 +1,22 @@
 Sistema de Monitoreo con MongoDB
 ================================
 
+
+esto es monitoreoaaaaaa
+
+
 Instalacion
 =========
 * source monitoreo/bin/activate
 * pip install -f requirements.txt
 
+Debugger Pudb
+=============
 
-============
-SQL Designer
-============
+from pudb import set_trace; set_trace()
 
-Load monitoreo-andyjo
+
+
+
+
 
